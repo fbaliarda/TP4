@@ -6,10 +6,10 @@
 static challenge * firstChallenge;
 static challenge * currChallenge;
 
-static challenge* initializeChallenge(char * question, int(*answerHandler)(char*));
+static challenge* initializeChallenge(char * (*question)(), int(*answerHandler)(char*));
 static void destroyChallengesAux(challenge * challenge);
 
-void initializeChallenges(char ** questions, int(*answerHandlers[])(char*), int numChallenges) {
+void initializeChallenges(char*(*questions[])(), int(*answerHandlers[])(char*), int numChallenges) {
     firstChallenge = initializeChallenge(questions[0], answerHandlers[0]);
     challenge * currentChallenge = firstChallenge;    
     for(int i = 1; i < numChallenges; i++) {
@@ -20,7 +20,7 @@ void initializeChallenges(char ** questions, int(*answerHandlers[])(char*), int 
     currChallenge = firstChallenge;
 }
 
-static challenge* initializeChallenge(char * question, int(*answerHandler)()) {
+static challenge* initializeChallenge(char * (*question)(), int(*answerHandler)()) {
     challenge * ret = (challenge*)malloc(sizeof(challenge));
     if(ret == NULL) {
         fprintf(stderr, "Error while initializing challenges");
@@ -39,7 +39,7 @@ int hasNextChallenge() {
 }
 
 void getNextChallenge(char * buffer) {
-    strcpy(buffer, currChallenge->question);
+    strcpy(buffer, currChallenge->question());
 }
 
 int checkAnswer(char * answer) {

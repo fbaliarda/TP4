@@ -3,8 +3,19 @@
 #include "../challenges.h"
 #include <assert.h>
 
-static char * testChallenges[] = {"Challenge1", "Challenge2"};
+static char * question1();
+static char * question2();
+
+static char * (*testChallenges[])() = {&question1, &question2};
 static int(*testAnswerHandlers[2])(char*);
+
+static char * question1() {
+    return "Challenge1";
+}
+
+static char * question2() {
+    return "Challenge2";
+}
 
 static int answerHandler1(char * answer) {
     if(strcmp("Answer1", answer) == 0) {
@@ -29,13 +40,13 @@ static void There_is_a_next_challenge() {
 static void The_next_challenge_is_Challenge1() {
     char buffer[256];
     getNextChallenge(buffer);
-    assert(strcmp(buffer, testChallenges[0]) == 0);
+    assert(strcmp(buffer, testChallenges[0]()) == 0);
 }
 
 static void The_next_challenge_is_Challenge2() {
     char buffer[256];
     getNextChallenge(buffer);
-    assert(strcmp(buffer, testChallenges[1]) == 0);
+    assert(strcmp(buffer, testChallenges[1]()) == 0);
 }
 
 static void Answering_incorrectly_still_returns_Challenge1() {

@@ -4,12 +4,12 @@
 typedef struct challenge challenge;
 
 typedef struct challenge {
-    char * question;
+    char* (*question)();
     int (*answerHandler)(char*);
     challenge * nextChallenge;
 } challenge;
 
-void initializeChallenges(char ** questions, int(*answerHandlers[])(char*), int numChallenges);
+void initializeChallenges(char*(*question[])(), int(*answerHandlers[])(char*), int numChallenges);
 void destroyChallenges();
 int hasNextChallenge();
 void getNextChallenge(char * buffer);
