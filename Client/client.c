@@ -6,16 +6,16 @@
 #include <errno.h>
 #include <unistd.h>
 #include <string.h>
+#define PORT 23423
 
 int main(int argc, char **argv)
 {
     int sd;
-    int port = 23423;
     int rval;
 	char buffer[256];
     struct hostent *hostaddr;
     struct sockaddr_in servaddr;
-`	//Abro el socket.
+	//Abro el socket.
     sd = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if(sd == -1)
 	{
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	memset(&servaddr, 0, sizeof(servaddr));
 
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_port = htons(port);
+	servaddr.sin_port = htons(PORT);
 	//La direccion del host es la local.
 	hostaddr = gethostbyname("127.0.0.1");
 
