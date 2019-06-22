@@ -3,16 +3,18 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <errno.h>
 #include <unistd.h>
 #include <string.h>
 #define PORT 23423
 
+#define h_addr h_addr_list[0] //Compatibilidad hacia atras
+
 int main(int argc, char **argv)
 {
     int sd;
     int rval;
-	char buffer[256];
     struct hostent *hostaddr;
     struct sockaddr_in servaddr;
 	//Abro el socket.
@@ -38,12 +40,27 @@ int main(int argc, char **argv)
 	{
 		close(sd);
 	}
-	
-	//Hago el write al servidor.
-	memset(buffer,0,256);
-	strcpy(buffer,"entendido\n");
-	write(sd,buffer,strlen(buffer) + 1);
+
+  printf("Por favor escriba el mensaje que quiera mandarle al servidor. Para terminar con el prompt escriba \"terminar\" (se asegura que ninguno de los desafios se responden con \"terminar\")\n");
+  char * buffer = malloc(256);
+  if(buffer == NULL) {
+    perror("Error al inicializar el buffer del cliente.");
+    exit(1);
+  }
+  int terminar = 0;
+  size_t len = 0;
+  while(!terminar) {
+    getline(&buffer, &len, stdin);
+    if(strcmp(buffer, "terminar\n") == 0) {
+      terminar = 1;
+    } else {
+      write(sd, buffer, strlen(buffer) + 1);
+    }
+  }
+
+  free(buffer);
+
 	close(sd);
 
-    return 0;
+  return 0;
 }

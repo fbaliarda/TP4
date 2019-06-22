@@ -11,7 +11,7 @@ static void destroyChallengesAux(challenge * challenge);
 
 void initializeChallenges(char*(*questions[])(), int(*answerHandlers[])(char*), int numChallenges) {
     firstChallenge = initializeChallenge(questions[0], answerHandlers[0]);
-    challenge * currentChallenge = firstChallenge;    
+    challenge * currentChallenge = firstChallenge;
     for(int i = 1; i < numChallenges; i++) {
         currentChallenge->nextChallenge = initializeChallenge(questions[i], answerHandlers[i]);
         currentChallenge = currentChallenge->nextChallenge;

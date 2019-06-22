@@ -1,5 +1,5 @@
 challengesTest:
-	gcc challengesTest.c ../challenges.c -o challengesTest.o
+	gcc -Wall challengesTest.c ../challenges.c -o challengesTest
 
 clean:
 	rm --f *.o
