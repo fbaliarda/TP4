@@ -1,0 +1,250 @@
+1)
+
+# \033[D \033[A \033[A \033[D \033[B \033[C \033[B \033[D *
+
+Respuesta: "#0854780*"
+
+
+2)
+
+https://vocaroo.com/i/s19015zmR4t8
+
+Respuesta: "nokia"
+
+
+3)
+
+EBADF... abrilo y verás (nota: esto es solo una recreacion puramente funcional del programa subido al campus, no intente proceder tal cual alli sino respondiendo directamente)
+
+Respuesta: "cabeza de calabaza"
+
+4)
+
+respuesta = strings[224] (lo mismo se aplica aca...)
+
+Respuesta: "easter_egg"
+
+5)
+
+.data .bss .comment ? .shstrtab .symtab .strtab (idem)
+
+Respuesta: ".runme"
+
+6)
+
+mixed fds
+
+Respuesta: "indeterminado"
+
+7)
+
+Tango Hotel India Sierra India Sierra Alfa Whiskey Echo Sierra Oscar Mike Echo
+
+Respuesta: "this is awesome"
+
+8)
+
+quine
+
+Respuesta: cachiporra
+
+Nota: si se quiere probar el quine, renombrar "quine1.c" a "quine.c".
+Si se quiere probar que ocurre cuando el usuario descubre la resolucion del desafio
+sin tener un quine, coloque en el directorio un archivo .c que no sea un quine llamado "quine.c"
+
+9)
+
+b gdbme y encontrá el valor mágico
+try again
+
+Respuesta: "gdb rules"
+
+10)
+
+/lib/x86_64-linux-gnu/libc-2.19.so ?
+
+Respuesta: "/lib/x86_64-linux-gnu/ld-2.19.so"
+
+11)
+
+Sorpresa!
+
+You shall not pass!
+
+Scrollear abajo para encontrar la respuesta...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Respuesta: "segundo parcial"
